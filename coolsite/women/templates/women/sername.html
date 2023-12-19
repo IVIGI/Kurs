@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+
+        }
+
+        .container {
+            text-align: center;
+            width: 100%;
+            height: 100%;
+
+        }
+
+        .animated-button {
+            display: inline-block;
+            background-color: cornflowerblue;
+            border: none;
+            color: black;
+            text-align: center;
+            font-size: 16px;
+            padding: 10px;
+            width: 200px;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+            margin: 5px;
+            cursor: pointer;
+             border-radius: 25px;
+        }
+
+        .animated-button:hover {
+            animation: shake 0.5s;
+        }
+
+        @keyframes shake {
+            0% {
+                transform: translateX(0);
+            }
+            25% {
+                transform: translateX(-5px);
+            }
+            50% {
+                transform: translateX(0);
+            }
+            75% {
+                transform: translateX(5px);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>Список Номеров</title>
+    <link type="text/css" href="{% static 'women/css/style_gl.css' %}" rel="stylesheet">
+</head>
+
+<body>
+
+    <h1>Свободные номера отеля</h1>
+        <ul>
+            {% for i in students %}
+                {% if i.gender == 'f' %}
+                    <li>
+                        <a href="{% url student_url i.id %}" class="animated-button">
+                            <b>{{i.FI}}</b>
+                        </a>
+                    </li>
+                {% else %}
+                    <li>
+                        <a href="{% url student_url i.id %}" class="animated-button">
+                            <i>{{i.FI}}</i>
+                        </a>
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+        <br>
+
+</body>
+</html>
