@@ -22,7 +22,7 @@
     <form ALIGN='center'>
 <h1>Данные о номере</h1>
 <h2>{{FI}}</h2>
-<img  src="{% static 'women/image/' %}{{image_}}">
+<img  src="{% static 'women/image/' %}{{current.image_}}">
 <br>
 <br>
 <i>
@@ -42,6 +42,16 @@
         Нет
     {% endif %}
 </i>
+        <br>
+
+        {% if current.Booked %}
+            Забронирован
+        {% else %}
+            Свободен
+        {% endif %}
+
+          {{ form.Booked }}
+        <button type="submit">Сохранить</button>
         </form>
 </div>
 <br>

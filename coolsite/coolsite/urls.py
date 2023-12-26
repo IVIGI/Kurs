@@ -20,9 +20,14 @@ from django.contrib import admin
 from django.urls import path, include
 from women.views import pageNotFound, Forbidden, ErrBadRequest, InternalServerError
 
+from django.contrib import admin
+from django.urls import path, include
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('women.urls')),
+
 
 ]
 

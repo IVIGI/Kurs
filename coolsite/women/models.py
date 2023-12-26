@@ -18,4 +18,4 @@ class Hotel (models.Model):
     CLASS = models.CharField(max_length=50)
     TV = models.BooleanField(default=True)
     IMG = models.ImageField(upload_to=None, height_field=None, width_field=None, max_length=100)
-    Booked = models.BooleanField(default='Бронирование')
+    Booked = models.BooleanField(default=True,blank=True)

@@ -56,7 +56,37 @@
           <div class="d-flex w-100 gap-2">
             <label for="newsletter1" class="visually-hidden">Email address</label>
             <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
-            <button class="btn btn-primary" type="button">Subscribe</button>
+<button class="btn btn-primary" type="button" onclick="subscribe()">Subscribe</button>
+
+<script>
+function subscribe() {
+  var email = document.getElementById('newsletter1').value;
+  // Проверка правильности введенной почты
+  if (validateEmail(email)) {
+    // Отправка AJAX-запроса на сервер для отправки письма
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "/subscribe", true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.send(JSON.stringify({email: email}));
+    xhr.onload = function() {
+      if (xhr.status === 200) {
+        alert('Письмо успешно отправлено на ' + email);
+      } else {
+        alert('Ошибка при отправке письма');
+      }
+    };
+  } else {
+    alert('Пожалуйста, введите корректный адрес электронной почты');
+  }
+}
+
+function validateEmail(email) {
+  // Простая проверка правильности введенной почты
+  var re = /\S+@\S+.\S+/;
+  return re.test(email);
+}
+</script>
+
           </div>
         </form>
       </div>

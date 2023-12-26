@@ -20,12 +20,10 @@
     <last-used-providers />
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files>
-      <object connection-id="67c5ba9b-74f9-4fc1-8996-79534c7aa867" object-ref="schemas/main/tables/women_hotel" />
-      <object connection-id="67c5ba9b-74f9-4fc1-8996-79534c7aa867" object-ref="schemas/main/tables/women_menu" />
-    </open-files>
+    <open-files />
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
+    <filter-actions connection-id="67c5ba9b-74f9-4fc1-8996-79534c7aa867" dataset="main.auth_user_groups" active-filter-id="" />
     <filter-actions connection-id="67c5ba9b-74f9-4fc1-8996-79534c7aa867" dataset="main.women_hotel" active-filter-id="286df25d-bb1f-435a-b3e9-088359aa53e2">
       <filter id="286df25d-bb1f-435a-b3e9-088359aa53e2" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
         <condition column="id" operator="=" value="" active="true" />
